@@ -5,14 +5,9 @@
     <title>AR with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@master/aframe/build/aframe-ar.js"></script>
-    <style>
-      .arjs-debug-ui {
-        display: none;
-      }
-    </style>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs="debugUIEnabled: false;">
       <a-assets>
         <a-asset-item id="3d-model" src="https://raw.githubusercontent.com/Sashagyk/ar-ddd/main/model_33.glb"></a-asset-item>
       </a-assets>
