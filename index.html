@@ -5,6 +5,11 @@
     <title>AR with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@master/aframe/build/aframe-ar.js"></script>
+    <style>
+      .arjs-debug-ui {
+        display: none;
+      }
+    </style>
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="debugUIEnabled: false;">
@@ -18,5 +23,12 @@
       
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const debugElements = document.querySelectorAll('.arjs-debug-ui');
+        debugElements.forEach(el => el.style.display = 'none');
+      });
+    </script>
   </body>
 </html>
