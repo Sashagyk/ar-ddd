@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>AR with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/three.js@1.7.2/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@2.2.0/aframe/build/aframe-ar.js"></script>
     <style>
       .arjs-debug-ui {
         display: none;
@@ -12,12 +12,12 @@
     </style>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
       <a-assets>
         <a-asset-item id="3d-model" src="https://raw.githubusercontent.com/Sashagyk/ar-ddd/main/model_33.glb"></a-asset-item>
       </a-assets>
 
-      <a-marker type="pattern" url="https://raw.githubusercontent.com/Sashagyk/ar-ddd/main/pattern-Frame%20343.patt">
+      <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/Sashagyk/ar-ddd/main/pattern-Frame%20343.patt">
         <a-entity gltf-model="#3d-model" scale="0.5 0.5 0.5"></a-entity>
       </a-marker>
       
