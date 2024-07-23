@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>AR with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/three.js@1.7.2/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/three.js@1.7.2/aframe/build/aframe-ar.js"></script>
     <style>
       .arjs-debug-ui {
         display: none;
@@ -12,7 +12,7 @@
     </style>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="trackingMethod: best">
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false;">
       <a-assets>
         <a-asset-item id="3d-model" src="https://raw.githubusercontent.com/Sashagyk/ar-ddd/main/model_33.glb"></a-asset-item>
       </a-assets>
@@ -23,5 +23,12 @@
       
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const debugElements = document.querySelectorAll('.arjs-debug-ui');
+        debugElements.forEach(el => el.style.display = 'none');
+      });
+    </script>
   </body>
 </html>
